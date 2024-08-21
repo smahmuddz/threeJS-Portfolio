@@ -12,7 +12,7 @@ const Earth = ({ isMobile, scale }) => {
     object={earth.scene}
     scale={isMobile ? 5 : 4.7}  // Use dynamic scale here
     position={isMobile ? [0, -6, 0] : [0, -4, 0]}
-    rotation={[0, Math.PI/4, 0]}
+    rotation={[0, 40, 0]}
   />
   );
 };
@@ -37,9 +37,8 @@ const EarthCanvas = () => {
         <directionalLight position={[10, 10, 10]} intensity={3} />
         <pointLight position={[0, 10, 10]} intensity={1.0} color="white" />
         <OrbitControls
-          autoRotate
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 3}
           minPolarAngle={Math.PI / 2}
         />
         <Earth />

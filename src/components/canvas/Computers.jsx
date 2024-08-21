@@ -23,7 +23,7 @@ const Computers = ({ isMobile, scale }) => {
         object={computer.scene}
         scale={isMobile ? 1 : 1.3}  
         position={isMobile ? [0, -1.7, 0] : [0, -2.6, 0]}
-        rotation={[0, Math.PI/4, 0]}
+        rotation={[0, 100, 0]}
       />
     </mesh>
   );
@@ -49,7 +49,6 @@ const ComputersCanvas = () => {
         <directionalLight position={[10, 10, 10]} intensity={3} />
         <pointLight position={[0, 10, 10]} intensity={1.0} color="white" />
         <OrbitControls
-          autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}

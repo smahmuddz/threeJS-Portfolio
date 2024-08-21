@@ -4,7 +4,6 @@ import { technologies } from "../constants";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { education } from "../constants"; 
 import { textVariant } from "../utils/motion";
 
 // TechItem component for rendering individual technology boxes
