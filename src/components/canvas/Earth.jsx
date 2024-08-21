@@ -1,14 +1,19 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
+import { EffectComposer, Outline } from '@react-three/postprocessing';
 import CanvasLoader from "../Loader";
 
-const Earth = (isMobile,scale) => {
+// Earth component to load the model
+const Earth = ({ isMobile, scale }) => {
   const earth = useGLTF("./planet/scene.glb");
-
   return (
-    <primitive object={earth.scene} scale={isMobile ? 4 : 3} position-y={isMobile ? -3:-2} rotation-y={0} />
+    <primitive
+    object={earth.scene}
+    scale={isMobile ? 5 : 4.7}  // Use dynamic scale here
+    position={isMobile ? [0, -6, 0] : [0, -4, 0]}
+    rotation={[0, Math.PI/4, 0]}
+  />
   );
 };
 
@@ -16,7 +21,7 @@ const EarthCanvas = () => {
   return (
     <Canvas
       shadows
-      frameloop='demand'
+      frameloop="demand"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
@@ -25,17 +30,12 @@ const EarthCanvas = () => {
         far: 200,
         position: [-4, -10, 6],
       }}
+     
     >
       <Suspense fallback={<CanvasLoader />}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[0, 10, 10]} intensity={0.5} />
-        <OrbitControls
-          autoRotate
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[10, 10, 10]} intensity={3} />
+        <pointLight position={[0, 10, 10]} intensity={1.0} color="white" />
         <OrbitControls
           autoRotate
           enableZoom={false}
@@ -43,7 +43,14 @@ const EarthCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Earth />
-
+        <EffectComposer multisampling={8} autoClear={false}>
+          <Outline
+            blur
+            edgeStrength={1.5}
+            width={1000}
+            color="#ffffff" // Outline color for separation
+          />
+        </EffectComposer>
         <Preload all />
       </Suspense>
     </Canvas>
