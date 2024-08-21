@@ -5,7 +5,7 @@ import { EffectComposer, Outline } from '@react-three/postprocessing';
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile, scale }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("./desktop_pc/scene.glb");
 
   return (
     <mesh>
@@ -21,7 +21,7 @@ const Computers = ({ isMobile, scale }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 1 : 1.5}  // Use dynamic scale here
+        scale={isMobile ? 1 : 1.4}  // Use dynamic scale here
         position={isMobile ? [0, -1.7, 0] : [0, -2.6, 0]}
         rotation={[0, Math.PI/4, 0]}
       />
