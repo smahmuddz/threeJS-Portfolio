@@ -10,8 +10,8 @@ const Earth = ({ isMobile, scale }) => {
   return (
     <primitive
     object={earth.scene}
-    scale={isMobile ? 5 : 4.7}  // Use dynamic scale here
-    position={isMobile ? [0, -6, 0] : [0, -4, 0]}
+    scale={10}  // Use dynamic scale here
+    position={[0, -4, 0]}
     rotation={[0, 40, 0]}
   />
   );
@@ -42,14 +42,6 @@ const EarthCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Earth />
-        <EffectComposer multisampling={8} autoClear={false}>
-          <Outline
-            blur
-            edgeStrength={1.5}
-            width={1000}
-            color="#ffffff" // Outline color for separation
-          />
-        </EffectComposer>
         <Preload all />
       </Suspense>
     </Canvas>
