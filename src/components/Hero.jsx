@@ -21,10 +21,11 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
           I am a lecturer and CSE graduate <br className='sm:block hidden' />
           </p>
+          <ComputersCanvas />
+    
         </div>
       </div>
-
-      <ComputersCanvas />
+    
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
@@ -41,6 +42,7 @@ const Hero = () => {
               className='w-3 h-3 rounded-full bg-secondary mb-1'
             />
           </div>
+          
         </a>
       </div>
     </section>
