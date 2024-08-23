@@ -37,6 +37,7 @@ const EarthCanvas = () => {
         <directionalLight position={[10, 10, 10]} intensity={3} />
         <pointLight position={[0, 10, 10]} intensity={1.0} color="white" />
         <OrbitControls
+        autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 3}
           minPolarAngle={Math.PI / 2}
