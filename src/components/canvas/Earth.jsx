@@ -10,7 +10,7 @@ const Earth = ({ isMobile, scale }) => {
   return (
     <primitive
     object={earth.scene}
-    scale={20}  // Use dynamic scale here
+    scale={40}  // Use dynamic scale here
     position={[0, -4, 0]}
     rotation={[0, 40, 0]}
   />
