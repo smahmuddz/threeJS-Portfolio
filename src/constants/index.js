@@ -200,7 +200,7 @@ const education = [
     company_name: "MSc in Computer Science and Engineering",
     icon: csedu,
     iconBg: "#383E56",
-    date: "July 2023 - Till to date",
+    date: "July 2024 - Till to date",
     points: [
       "Currently enrolled in MSc Program of University of Dhaka."
     ],
@@ -228,8 +228,8 @@ const education = [
     ],
   },
   {
-    title: "Secondary School Certificate (SSC)",
-    company_name: "Dhaka Collegiate School",
+    title: "Dhaka Collegiate School",
+    company_name: "Secondary School Certificate (SSC)",
     icon: dcsd,
     iconBg: "#E6DEDD",
     date: "2016",
