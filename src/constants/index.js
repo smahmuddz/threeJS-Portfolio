@@ -14,7 +14,6 @@ import {
   mongodb,
   git,
   figma,
-  docker,
   meta,
   starbucks,
   tesla,
@@ -51,19 +50,19 @@ export const navLinks = [
 const services = [
   {
     title: "Lecturer",
-    icon: web,
+    icon: starbucks,
   },
   {
     title: "React Native Developer",
-    icon: mobile,
+    icon: reactjs,
   },
   {
     title: "Content Creator",
-    icon: backend,
+    icon: meta,
   },
   {
     title: "Researcher",
-    icon: creator,
+    icon: web,
   },
 ];
 

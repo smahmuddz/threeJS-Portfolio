@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGraduationCap, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGraduationCap, FaEnvelope, FaFacebook, FaInstagram, FaBook } from "react-icons/fa";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";

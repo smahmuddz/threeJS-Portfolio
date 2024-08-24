@@ -1,5 +1,6 @@
+// src/components/About.jsx
+
 import React from "react";
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -7,33 +8,15 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+// ServiceCard component defined within About.jsx
+const ServiceCard = ({ icon, title }) => {
+  return (
+    <div className='flex flex-col items-center justify-center w-28 h-28  rounded-lg shadow-lg'>
+      <img src={icon} alt={title} className='w-16 h-16 object-contain mb-2' />
+      <p className='text-center text-sm font-semibold text-white'>{title}</p>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -55,9 +38,14 @@ const About = () => {
         and a drone ground station. My goal is to continue learning, innovating, and contributing to the field of computer science.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <motion.div variants={fadeIn("", "", 0.2, 1)} className='mt-20'>
+        <p className={`${styles.sectionSubText} text-center`}>I am a</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}></h2>
+      </motion.div>
+
+      <div className='mt-10 flex flex-wrap justify-center gap-10'>
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard key={service.title} icon={service.icon} title={service.title} />
         ))}
       </div>
     </>
